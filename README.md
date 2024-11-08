@@ -8,4 +8,6 @@ For the test databases, 1 is file based (sqlite) and 2 are docker container base
 To launch the docker containers for postgres & mysql, simply `docker compose up -d` in your local shell (with docker enginer running)
 Next, you are then free to launch the streamlit app for testing by running `streamlit run streamlit_app.py`
 
-You can then use the select box to choose between the different connections to confirm that the default queries (simple math) operate as expected on the available connections.
+You can then use the select box to choose between the different connections to confirm that the default queries (statement, login form) operate as expected on the available connections.
+
+![Streamlit App](resource\debug_app.png)
