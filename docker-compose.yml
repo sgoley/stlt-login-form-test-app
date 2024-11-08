@@ -1,0 +1,26 @@
+# docker-compose.yml
+
+name: dbtest
+  
+services: 
+  pg:
+    build:
+      context: ./postgres/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "2345:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: md5
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "6033:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+   

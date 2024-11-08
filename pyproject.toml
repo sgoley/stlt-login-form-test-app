@@ -1,0 +1,14 @@
+[project]
+name = "stlt-login-form-test-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "argon2-cffi>=23.1.0",
+    "duckdb-engine>=0.13.4",
+    "sqlalchemy[mysql,postgresql]>=2.0.36",
+    "st-supabase-connection>=2.0.0",
+    "stqdm>=0.0.5",
+    "streamlit>=1.39.0",
+]

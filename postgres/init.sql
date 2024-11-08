@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS test.public.user_test;
 -- clean up anything existing
-CREATE TABLE IF NOT EXISTS test.public.user_test (
+CREATE TABLE IF NOT EXISTS test.public.users_test (
     username text not null default ''::text,
     password text not null,
     constraint users_pkey primary key (username),
