@@ -1,4 +1,15 @@
-FROM postgres
-COPY init.sql /docker-entrypoint-initdb.d/
-ENV POSTGRES_PASSWORD=postgres
-ENV POSTGRES_HOST_AUTH_METHOD=md5
+FROM postgres:17
+
+# Copy initialization scripts in order
+COPY ./01-create-db.sql \
+     ./02-init-schema.sql \
+     ./03-seed-data.sql \
+     /docker-entrypoint-initdb.d/
+
+# Add labels for better maintainability
+LABEL maintainer="Your Name <your.email@example.com>"
+LABEL version="1.0"
+LABEL description="PostgreSQL test database with initialization scripts"
+
+# Optionally set permissions explicitly
+RUN chmod 0755 /docker-entrypoint-initdb.d/*
